@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+       <meta charset="utf-8">
+        <title>1</title>
+        <link rel="stylesheet" href="1.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+
+    </head>
+
+    <body>
+        <div class="container" id="app">
+
+          <h1 class="text-primary">YOU HAVE {{timeSelect}} SECONDS!</h1>
+          <br>
+          <div class="row">
+            <h2 class="col-sm-4">Clicks: {{count}}</h2>
+            <h2 class="col-sm-4">Time: {{time}}</h2>
+          </div>
+          <div class="">
+            <button @click="restart" class="btn btn-danger">RETARD!</button>
+            <button @click="up" v-show="disableButton" class="btn btn-primary span-12">PRESS ME!</button>
+            <input v-show="disableInput" v-model="timeSelect" class="form-control col-md-4" type="number" placeholder="Chose seconds"/>
+          </div>
+            <div class="row">
+              <h1 class="col-sm-12 text-danger" v-show="record">YOUR SCORE {{this.count}}</h1>
+            </div>
+        </div>
+    </body>
+    <script src="main.js"></script>
+</html>
