@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+
+    <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase-messaging.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.2.6/vue.min.js"></script>
+    <script src="https://unpkg.com/tween.js@16.3.4"></script>
+    <script src="https://unpkg.com/color-js@1.0.3/color.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
+    <link rel="stylesheet" href="1.css">
+
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <h2>Welcome</h2>
+        <transition name="slider">
+          <div v-show="alertAppeare" class="alert alert-danger" role="alert" style="z-index: 999;">
+            {{errorMessage}}
+          </div>
+        </transition>
+
+          <form class="form-group" action="index.html" method="post">
+            <div class="text-center form-group">
+              <label for="exampleInputEmail1">emailemail@gmailgmail.com Email address</label>
+              <input v-model="inputEmail" type="email" class="mx-auto form-control col-3" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="text-center form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input v-model="inputPAssword" type="password" class="mx-auto form-control col-3" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="text-center form-group">
+              <button @click="login" type="button" class="btn btn-primary">Login</button>
+              <button @click="signUp" type="button" class="btn btn-secondary">Sign Up</button>
+              <button @click="test" type="button" class="btn btn-secondary">test</button>
+            </div>
+          </form>
+
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

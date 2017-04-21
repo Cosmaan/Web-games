@@ -1,0 +1,19 @@
+/* appearing ALERT */
+.alert {
+  width: 100%;
+  position: absolute;
+  z-index: 999;
+}
+.slider-enter-active {
+  transition: all 0.3s ease;
+}
+.slider-leave-active {
+  transition: all 0s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slider-enter, .slide-fade-leave-to {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.form-group {
+  height: 70px;
+}
