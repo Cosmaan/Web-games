@@ -44,30 +44,31 @@
               <button @click="upe" type="button" class="btn btn-primary">UP</button>
               <button @click="showBoard = !showBoard" type="button" class="btn btn-primary">Show Score Board</button>
             </div>
-            <div v-if="showBoard" class="container col-9">
+
+            <div v-if="showBoard" class="container col-6">
               <button @click="osb" type="button" class="btn btn-primary">Reload</button>
               <ol class="list">
-                <li id="list-group-item" class="list-group-item list-group-item-action" v-for="n in scoreBoard">{{n}}</li>
+    <!--             <li id="list-group-item" class="list-group-item list-group-item-action" v-for="n in scoreBoard">{{n}}</li> -->
               </ol>
 
-      <!--        <table class="table">
-                <thead>
+             <table class="table-bordered table-striped table">
+                <thead class="thead-inverse">
                   <tr>
-                    <th>#</th>
-                    <th>Nick</th>
-                    <th>Score</th>
+                    <th scope="row">#</th>
+                    <th scope="row">Nick</th>
+                    <th scope="row">Score</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <template>
-                  <tr v-for="data in scoreBoard">
-                    <th scope="row">{{tabPlace}}</th>
-                    <td>{{tabNick}}</td>
-                    <td>{{tabScore}}</td>
+                <tbody class="table-striped">
+                  <template >
+                  <tr v-for="(data, index) in scoreBoard">
+                    <th scope="col-1 row">{{index+1}}</th>
+                    <td class="col-1">{{data[0]}}</td>
+                    <td class="col-1">{{data[1]}}</td>
                   </tr>
                   </template>
                 </tbody>
-              </table> -->
+              </table>
             </div>
           </form>
       </div>

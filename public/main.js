@@ -38,7 +38,6 @@ Vue.directive("filter", {
 let app = new Vue({
   el: '#app',
   data: {
-    place: 0,
     score: 0,
     nickName: '',
     alertAppeare: false,
@@ -71,12 +70,11 @@ let app = new Vue({
       let listPlace = this.place;
       reffer.orderByValue().limitToLast(50).once('value', function(snapshot) {
         snapshot.forEach(function(childSnapshot) {
-          listPlace += 1;
           let currentNick = childSnapshot.key;
           let currentScore = childSnapshot.val();
-          sb.push(currentNick + ' ' + currentScore);
+          sb.push([currentNick, currentScore]);
         });
-        this.sb = sb.reverse();
+        sb.reverse();
       });
     }
   }
