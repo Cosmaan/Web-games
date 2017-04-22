@@ -23,29 +23,53 @@
   <body>
     <div id="app">
       <div class="container">
-        <h2>Welcome</h2>
         <transition name="slider">
           <div v-show="alertAppeare" class="alert alert-danger" role="alert" style="z-index: 999;">
+            <button @click="alertOn" type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
             {{errorMessage}}
           </div>
         </transition>
-
           <form class="form-group" action="index.html" method="post">
             <div class="text-center form-group">
-              <label for="exampleInputEmail1">emailemail@gmailgmail.com Email address</label>
-              <input v-model="inputEmail" type="email" class="mx-auto form-control col-3" aria-describedby="emailHelp" placeholder="Enter email">
+              <label for="exampleInputEmail1"></label>
+              <input v-filter="'[a-zA-Z]'" v-model="nickName" type="text" class="topInput mx-auto form-control col-3" placeholder="Your nick">
             </div>
             <div class="text-center form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input v-model="inputPAssword" type="password" class="mx-auto form-control col-3" id="exampleInputPassword1" placeholder="Password">
+              <button @click="login" type="button" class="btn btn-primary">Play</button>
             </div>
             <div class="text-center form-group">
-              <button @click="login" type="button" class="btn btn-primary">Login</button>
-              <button @click="signUp" type="button" class="btn btn-secondary">Sign Up</button>
-              <button @click="test" type="button" class="btn btn-secondary">test</button>
+              <p>{{score}}</p>
+              <button @click="upe" type="button" class="btn btn-primary">UP</button>
+              <button @click="showBoard = !showBoard" type="button" class="btn btn-primary">Show Score Board</button>
+            </div>
+            <div v-if="showBoard" class="container col-9">
+              <button @click="osb" type="button" class="btn btn-primary">Reload</button>
+              <ol class="list">
+                <li id="list-group-item" class="list-group-item list-group-item-action" v-for="n in scoreBoard">{{n}}</li>
+              </ol>
+
+      <!--        <table class="table">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Nick</th>
+                    <th>Score</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <template>
+                  <tr v-for="data in scoreBoard">
+                    <th scope="row">{{tabPlace}}</th>
+                    <td>{{tabNick}}</td>
+                    <td>{{tabScore}}</td>
+                  </tr>
+                  </template>
+                </tbody>
+              </table> -->
             </div>
           </form>
-
       </div>
     </div>
     <script src="main.js"></script>

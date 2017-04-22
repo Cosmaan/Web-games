@@ -5,15 +5,25 @@
   z-index: 999;
 }
 .slider-enter-active {
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
 }
 .slider-leave-active {
-  transition: all 0s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all 0.2s ease;
 }
-.slider-enter, .slide-fade-leave-to {
+.slider-enter, .slider-leave-to {
   transform: translateY(-100%);
   opacity: 0;
 }
 .form-group {
   height: 70px;
+}
+.top {
+  margin-top: 50px;
+}
+
+.btn {
+  margin: 10px;
+}
+#list-group-item {
+  list-style-type: decimal;
 }
